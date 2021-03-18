@@ -47,12 +47,14 @@ class Report(object):
             self.__login()
         except Exception as e:
             print("登录失败", e)
+            raise
         try:
             self.__get_server_info()
             self.__get_data()
             self.__submit_report()
         except Exception as e:
             print("提交失败", e)
+            raise
 
     def __login(self):
         """登录 获取cookie"""
